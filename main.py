@@ -29,7 +29,7 @@ def nav_room_listner(event):
 
 
 def mani_object_listener(event):
-    '''
+    ''' 
     event.data -> {'mani_object': 'mani_object_name'}
     '''
     selected_obj = None if event.data.upper() == 'NONE' else event.data
