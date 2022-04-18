@@ -19,13 +19,18 @@ def nav_room_listner(event):
     event.data -> {'nav_room': 'nav_room_name'}
     '''
     room_num = None if event.data == 0 else event.data
+
+    #TODO: @Shruti - Update these values
     room_to_coords = {
         'room 3108': (0, 0),
         'room 3109': (0, 1),
     }
+
+    x,y = room_to_coords[room_num]
+
     if room_num:
         #TODO: @Shruti - Add your ROS terminal commands here
-        run_terminal_cmd("YOUR COMMAND GOES HERE", delay_in_sec = 1)
+        # run_terminal_cmd("YOUR COMMAND GOES HERE", delay_in_sec = 1)
 
 
 def mani_object_listener(event):
@@ -35,7 +40,7 @@ def mani_object_listener(event):
     selected_obj = None if event.data.upper() == 'NONE' else event.data
     if selected_obj:
     #TODO: @Shivani - Add your ROS terminal commands here
-        run_terminal_cmd("YOUR COMMAND GOES HERE", delay_in_sec = 1)
+        # run_terminal_cmd("YOUR COMMAND GOES HERE", delay_in_sec = 1)
 
 
 def upload_list_of_objects(list_of_objects):
