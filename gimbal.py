@@ -6,9 +6,15 @@ import os
 
 
 def move_gimbal(event):
-    x,y = event.data['x'], event.data['y']
-    print(x,y)
-    #TODO @JASH: Move gimbal to x,y
+    try:
+        '''
+        x -> -1 to 1
+        y -> -1 to 1
+        '''
+        x,y = event.data['x'], event.data['y']
+        print(x,y)
+    except KeyError as e:
+        print(e)
 
 if __name__ == "__main__":
 
