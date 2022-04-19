@@ -6,13 +6,25 @@ import os
 
 
 def move_gimbal(event):
+    '''
+    Get the event data and move the gimbal accordingly
+    X -> -1 [Joystick left] to 1 [Joystick right]
+    Y -> -1 [Joystick up] to 1 [Joystick down]
+    '''
     try:
-        '''
-        x -> -1 to 1
-        y -> -1 to 1
-        '''
-        x,y = event.data['x'], event.data['y']
-        print(x,y)
+        x,y = event.data['x'], event.data['y'] if event.data.get('x') and event.data.get('y') else None
+        if x and y:
+            #TODO: @JASH - Add your code below
+
+            ### I HAVE ADDED SOME HELPER CODE BELOW TO TRANSFORM VALUES OF X AND Y - INCASE YOU NEED THAT :) ###
+            # # Convert X & Y from [-1,1] to [0,1]
+            # x = (x + 1) / 2
+            # y = (y + 1) / 2
+
+            # # Convert X and Y to digital values
+            # x = 0 if abs(x) < 0.5 else 1 # If X is less than 0.5, set it to 0 else set it to 1
+            # y = 0 if abs(y) < 0.5 else 1 # If Y is less than 0.5, set it to 0 else set it to 1
+            print(x,y)
     except KeyError as e:
         print(e)
 
