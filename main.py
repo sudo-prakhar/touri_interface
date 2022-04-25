@@ -31,6 +31,7 @@ def nav_room_listner(event):
     if room_num:
         #TODO: @Shruti - Add your ROS terminal commands here
         # run_terminal_cmd("YOUR COMMAND GOES HERE", delay_in_sec = 1)
+        pass
 
 
 def mani_object_listener(event):
@@ -41,6 +42,7 @@ def mani_object_listener(event):
     if selected_obj:
     #TODO: @Shivani - Add your ROS terminal commands here
         # run_terminal_cmd("YOUR COMMAND GOES HERE", delay_in_sec = 1)
+        pass
 
 
 def upload_list_of_objects(list_of_objects):
@@ -53,10 +55,11 @@ def upload_list_of_objects(list_of_objects):
 
 if __name__ == "__main__":
 
+    # TODO: Update the path for firebase key
     cred = credentials.Certificate("keys/touri-65f07-firebase-adminsdk-wuv71-3751c21aa8.json")
     firebase_admin.initialize_app(cred, {'databaseURL': 'https://touri-65f07-default-rtdb.firebaseio.com/'})
 
-    db.reference("/nav/room_num").listen(nav_room_listner)
+    db.reference("room_num").listen(nav_room_listner)
     db.reference("/mani/object").listen(mani_object_listener)
 
 
